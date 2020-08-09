@@ -1,6 +1,6 @@
 {
-    "name": "matteocontrini/flarum-imgur-upload",
-    "description": "Simple image upload from the Flarum editor",
+    "name": "customworld/anonfiles-test",
+    "description": "Testing",
     "type": "flarum-extension",
     "license": "GPL-3.0",
     "authors": [
@@ -18,9 +18,9 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "Imgur Upload",
+            "title": "Anonfile Upload",
             "icon": {
-                "name": "fas fa-circle",
+                "name": "fas fa-clipboard",
                 "backgroundColor": "#272727",
                 "color": "#85BF25"
             }
