@@ -43,7 +43,7 @@ export default class UploadButton extends Component {
                 m('form#imgur-upload-form', [
                     m('input', {
                         type: 'file',
-                        accept: 'image/*',
+                        accept: '*',
                         onchange: this.formUpload.bind(this),
                         // disable button while doing things
                         disabled: this.isLoading || this.isSuccess || this.isError
