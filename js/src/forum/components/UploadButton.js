@@ -59,10 +59,6 @@ export default class UploadButton extends Component {
         if (e.clipboardData && e.clipboardData.items) {
             let item = e.clipboardData.items[0];
 
-            if (!item.type.startsWith('image')) {
-                return;
-            }
-
             let file = item.getAsFile();
             this.upload(file);
         }
@@ -80,12 +76,10 @@ export default class UploadButton extends Component {
 
         let formData = new FormData();
         formData.append('image', file);
-
+		console.log("FormData: " + formData);
+		
         $.ajax({
-            url: 'https://api.imgur.com/3/image',
-            headers: {
-                'Authorization': 'Client-ID ' + app.forum.attribute('imgur-upload.client-id')
-            },
+            url: 'https://api.anonfiles.com/upload',
             type: 'POST',
             data: formData,
             cache: false,
@@ -103,16 +97,9 @@ export default class UploadButton extends Component {
         this.isSuccess = true;
         m.redraw();
         
-        let imageLink = response.data.link;
-        let previewLink = imageLink;
+        let imageLink = response.data.file.url.full;
 
-        // If the image is large, use a smaller version as the preview image
-        if (response.data.width > 1024) {
-            let extensionIndex = previewLink.lastIndexOf('.');
-            previewLink = previewLink.slice(0, extensionIndex) + 'h' + previewLink.slice(extensionIndex);
-        }
-
-        let stringToInject = `[URL=${imageLink}][IMG]${previewLink}[/IMG][/URL]\n`;
+        let stringToInject = `{imageLink}`;
         this.props.textArea.insertAtCursor(stringToInject);
 
         // After a bit, re-enable upload
