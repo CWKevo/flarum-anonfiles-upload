@@ -8,7 +8,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 
 return [
     (new Extend\Frontend('forum'))
-        ->js(__DIR__.'/js/forum.js')
+        ->js(__DIR__.'/js/src/forum/index.js')
         ->css(__DIR__.'/css/forum.css'),
     new Extend\Locales(__DIR__.'/locale'),
 ];
