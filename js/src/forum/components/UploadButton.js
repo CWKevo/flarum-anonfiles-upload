@@ -13,8 +13,8 @@ export default class UploadButton extends Component {
     
     view() {
         let attrs = {
-            className: 'Button hasIcon imgur-upload-button',
-            title: app.translator.trans('imgur-upload.forum.upload'),
+            className: 'Button hasIcon anonfile-upload-button',
+            title: app.translator.trans('anonfile-upload.forum.upload'),
             config: (el) => {
                 this.domElement = el;
                 $(el).tooltip();
@@ -28,9 +28,9 @@ export default class UploadButton extends Component {
         else buttonIcon = icon('far fa-image', { className: 'Button-icon' });
         
         let label = '';
-        if (this.isLoading) label = app.translator.trans('imgur-upload.forum.loading');
-        else if (this.isSuccess) label = app.translator.trans('imgur-upload.forum.done');
-        else if (this.isError) label = app.translator.trans('imgur-upload.forum.error');
+        if (this.isLoading) label = app.translator.trans('anonfile-upload.forum.loading');
+        else if (this.isSuccess) label = app.translator.trans('anonfile-upload.forum.done');
+        else if (this.isError) label = app.translator.trans('anonfile-upload.forum.error');
         
         // When there is no label, the component element should be shown as a square button
         if (label == '') {
@@ -40,7 +40,7 @@ export default class UploadButton extends Component {
         return m('div', attrs, [
             buttonIcon,
                 m('span', { className: 'Button-label' }, label),
-                m('form#imgur-upload-form', [
+                m('form#anonfile-upload-form', [
                     m('input', {
                         type: 'file',
                         accept: '*',
@@ -76,7 +76,7 @@ export default class UploadButton extends Component {
 
         let formData = new FormData();
         formData.append('image', file);
-		console.log("FormData: " + formData);
+	console.log("FormData: " + formData);
 		
         $.ajax({
             url: 'https://api.anonfiles.com/upload',
@@ -91,7 +91,7 @@ export default class UploadButton extends Component {
     }
     
     success(response) {
-        $('#imgur-upload-form input').val('');
+        $('#anonfile-upload-form input').val('');
         
         this.isLoading = false;
         this.isSuccess = true;
@@ -110,7 +110,7 @@ export default class UploadButton extends Component {
     }
     
     error(response) {
-        $('#imgur-upload-form').val('');
+        $('#anonfile-upload-form').val('');
         
         this.isLoading = false;
         this.isError = true;
