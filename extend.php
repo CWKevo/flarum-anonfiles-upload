@@ -1,6 +1,6 @@
 <?php
 
-namespace ImgurUpload;
+namespace AnonfilesUpload;
 
 use Flarum\Extend;
 use Flarum\Frontend\Document;
@@ -11,7 +11,4 @@ return [
         ->js(__DIR__.'/js/dist/forum.js')
         ->css(__DIR__.'/css/forum.css'),
     new Extend\Locales(__DIR__.'/locale'),
-    new Extend\Compat(function (Dispatcher $events) {
-        $events->subscribe(Listeners\LoadSettingsFromDatabase::class);
-    })
 ];
