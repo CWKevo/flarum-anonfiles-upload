@@ -1,7 +1,7 @@
 imgur-upload:
   admin:
     settings:
-        title: Imgur Upload settings
+        title: Anonfiles Upload settings
   forum:
     upload: Press or paste to upload
     loading: Uploading...
