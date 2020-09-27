@@ -1,9 +1,9 @@
-.imgur-upload-button {
+.anonfiles-upload-button {
 	overflow: hidden;
 	position: relative;
 }
 
-.imgur-upload-button input {
+.anonfiles-upload-button input {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -17,12 +17,12 @@
 	height: 100%;
 }
 
-.imgur-upload-button .LoadingIndicator {
+.anonfiles-upload-button .LoadingIndicator {
 	display: inline;
 	margin: 0 12px 0 2px;
 }
 
-.imgur-upload-button .LoadingIndicator .spinner {
+.anonfiles-upload-button .LoadingIndicator .spinner {
 	transform: scale(0.7) !important;
 }
 
