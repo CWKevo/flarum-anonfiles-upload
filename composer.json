@@ -1,6 +1,6 @@
 {
-    "name": "customworld/anonfiles-test",
-    "description": "Testing",
+    "name": "freeflarum/flarum-anonfiles-upload",
+    "description": "Modified Imgur Upload extension by Matteo to be able to upload files to Anonfiles.com.",
     "type": "flarum-extension",
     "license": "GPL-3.0",
     "authors": [
@@ -11,6 +11,10 @@
       {
         "name": "Matteo Pompili",
         "email": "matpompili@gmail.com"
+      },
+      {
+        "name": "FreeFlarum",
+        "email": "info@freeflarum.com"
       }
     ],
     "require": {
@@ -18,7 +22,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "Anonfile Upload",
+            "title": "Anonfiles Upload",
             "icon": {
                 "name": "fas fa-clipboard",
                 "backgroundColor": "#272727",
@@ -28,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ImgurUpload\\": "src/"
+            "AnonfilesUpload\\": "src/"
         }
     }
 }
